@@ -14,12 +14,15 @@ function App() {
       <div style={styles.buttonGroup}>
         <button onClick={decrement} style={styles.button} disabled={count===0 ? true : false}>
           <Minus size={20} />
+          {/* decrement */}
         </button>
         <button onClick={reset} style={styles.button} disabled={count===0 ? true : false}>
           <RotateCcw size={20} />
+          {/* reset */}
         </button>
         <button onClick={increment} style={styles.button}>
           <Plus size={20} />
+          {/* increment */}
         </button>
       </div>
     </div>
