@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Plus, Minus, RotateCcw } from 'lucide-react';
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,18 +10,18 @@ function App() {
   const reset = () => setCount(0);
 
   return (
-    <div style={styles.container}>
+    <div className='container' style={styles.container}>
       <h1>Counter: {count}</h1>
-      <div style={styles.buttonGroup}>
-        <button onClick={decrement} style={styles.button} disabled={count===0 ? true : false}>
+      <div className='btn-group' style={styles.buttonGroup}>
+        <button className='btn-decrement' onClick={decrement} style={styles.button} disabled={count===0 ? true : false}>
           <Minus size={20} />
           {/* decrement */}
         </button>
-        <button onClick={reset} style={styles.button} disabled={count===0 ? true : false}>
+        <button className='btn-reset' onClick={reset} style={styles.button} disabled={count===0 ? true : false}>
           <RotateCcw size={20} />
           {/* reset */}
         </button>
-        <button onClick={increment} style={styles.button}>
+        <button className='btn-increment' onClick={increment} style={styles.button}>
           <Plus size={20} />
           {/* increment */}
         </button>
@@ -31,24 +32,17 @@ function App() {
 
 const styles = {
   container: {
-    display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
     height: '100vh',
     fontFamily: 'Arial, sans-serif'
   },
   buttonGroup: {
-    display: 'flex',
     gap: '10px'
   },
   button: {
     padding: '10px 20px',
     fontSize: '16px',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    cursor: 'pointer'
   }
 };
 
